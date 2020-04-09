@@ -4,9 +4,6 @@ import cors from 'cors'
 import passport from 'passport'
 import passportMiddleware from './middlewares/passport'
 
-import authRoutes from './routes/auth.routes'
-import specialRoutes from './routes/special.routes'
-
 //inicializamos express
 const app = express();
 
@@ -25,6 +22,10 @@ app.get('/', (req,res) => {
       res.send('La API-REST esta corriendo en el puerto'+app.get('port'))
 });
 
+import authRoutes from './routes/auth.routes'
+import specialRoutes from './routes/special.routes'
+
+//Utilizamos los rutas que exportamos
 app.use(authRoutes);
 app.use(specialRoutes);
 
